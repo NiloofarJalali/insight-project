@@ -1,4 +1,4 @@
-HotelWatch
+#HotelWatch
 
 Finding the right place to stay during a vacation or business trip is very important. When people are searching for the hotels in different websites, they can find a lot of  beautiful appealing pictures . However, looking at the different comment reviews from previous customers, signifies the contradictory feedbacks that make the decision very complicated. Although,  it's inevitable to expect different people have the similar level of satisfaction, some times the opposite reviews are as a results of  different experience in different timing.
 
