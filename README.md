@@ -11,9 +11,6 @@ Business Case:
 Help the hotel company, to detect the anomaly in a real time with the exact reason. Some of the negative reviews might be as a result of malfunctioning of management during the critical times such as hurricane. That can be helpful to be more prepared.
 The can ascertain what is the most positive topic for customers that encourage them to give high ratings. what is the most disturbing factor to receive negative review.
 
-To tackle this problem, the use LDA topic modeling is used to identify the different topics of review and then based on sentiment analysis we can give positive or negative score for each topic.
-Finally the we select the 2 years time interval for the review of each hotel. and divide this period in to 3 months time interval. we identify the score in each period as a result of :
 
-score: Total number of positive comment/(total number of reviews)
 
 
