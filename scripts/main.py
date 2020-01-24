@@ -13,7 +13,7 @@ def process(input_data, no_list,time_table,start, limit, step,file_name,verbose)
     nlp.add_pipe ( lemmatizer , name='lemmatizer' )
     nlp.add_pipe ( remove_stopwords , name="stopwords" , last=True )
     nlp.add_pipe ( spacy_root , name='root' )
-    
+
 
     if verbose == True:
 
