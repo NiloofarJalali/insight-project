@@ -15,33 +15,68 @@ import dash_html_components as html
 import dash_core_components as dcc
 from plotly.subplots import make_subplots
 from plotly.graph_objs import *
+import math as m
+
 
 ############### Loading the file
-import os
 
-scores = {} # scores is an empty dict already
-
-
-
-with open("/Users/niloofar/Documents/insight/data/cleaned/hotel1/Final_res",'rb') as f:
+with open("/Users/niloofar/Documents/insight/data/cleaned/hotel2/sentiment_topic_final",'rb') as f:
         df=pickle.load(f,encoding='latin1')
 
 
-sdate = date(2015, 8, 3)   # start date
-edate = date(2017, 8,4)   # end date
-delta = edate - sdate
-month=(delta/30).days
-L=['Aug-15','Sep-15','Oct-15','Nov-15','Dec-15','Jan-16','Feb-16','Mar-16','Apr-16','May-16','Jun-16','Jul-16',
-'Aug-16','Sep-16','Oct-16','Nov-16','Dec-16','Jan-17','Feb-17','Mar-17','Apr-17','May-17','Jun-17','Jul-17']
-# L=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+# sdate = date(2013, 3, 1)   # start date
+# edate = date(2020, 1, 1)   # end date
+# delta = edate - sdate
+# season=(delta/90).days
+# Date=[]
+# for i in range(0,season):
+#     pt=sdate + timedelta(days=90)
+#     Date.append([sdate,pt])
+#     sdate=pt
+#
+# flatten = lambda l: [item for sublist in l for item in sublist]
+# # converting the date as string
+# P=flatten(Date)
+# P=[i.strftime('%Y-%m') for i in P]
+# K=[]
+# for i in range(0, m.ceil(len(P)/2)):
+#     a= P[:2]
+#     K.append(a)
+#     P=P[2:]
 
-P=[]
-for i in range(0,month):
-    pt=sdate + timedelta(days=30)
-    P.append([sdate,pt])
+# L=['Aug-15','Sep-15','Oct-15','Nov-15','Dec-15','Jan-16','Feb-16','Mar-16','Apr-16','May-16','Jun-16','Jul-16',
+# 'Aug-16','Sep-16','Oct-16','Nov-16','Dec-16','Jan-17','Feb-17','Mar-17','Apr-17','May-17','Jun-17','Jul-17']
+# # L=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+
+# P=[]
+# for i in range(0,month):
+#     pt=sdate + timedelta(days=30)
+#     P.append([sdate,pt])
+#     sdate=pt
+#
+# print(P)
+
+
+import datetime
+from datetime import date, timedelta
+
+sdate = date(2013, 1, 1)   # start date
+edate = date(2020, 1, 1)   # end date
+delta = edate - sdate
+year=(delta/365).days
+
+Date=[]
+for i in range(0,year):
+    if i==3:
+        pt=sdate + timedelta(days=366)
+    else:
+        pt=sdate + timedelta(days=365)
+    Date.append([sdate,pt])
     sdate=pt
 
-# print(P)
+K=[Date[i][0].year for i in range(0,len(Date))]
+
+
 
 ######setting up the app
 import os
@@ -72,7 +107,7 @@ else:
 
 app.layout = html.Div([html.Div([html.H1("Average Hotel Review per Day")], style={'textAlign': "center"}),
                        html.Div([dcc.Dropdown(id="selected-value", multi=False,
-                                              options=[ { "label": i ,"value": i} for i in L])]),
+                                              options=[ { "label": i ,"value": i} for i in K])]),
                        html.Div([dcc.Graph(id="my-graph")])
                        # html.Div([dcc.Graph(id="my-graph2")])
                        ])
@@ -88,15 +123,17 @@ def update_figure(selected):
     if selected is None:
         index = 0
     else:
-        index=L.index(selected)
+        index=K.index(selected)
 
     # dt=df[index]
     import pandas as pd
-    dd=df[(df.Review_Date>=P[index][0]) & (df.Review_Date<P[index][1])]
+    dd=df[(df.Review_Date>=Date[index][0]) & (df.Review_Date<Date[index][1])]
     dr=dd[['Review_Date','Reviewer_Score']]
-    dr=dr.groupby(['Review_Date']).mean()
-    dr=pd.DataFrame({'Date':dr.index,'Score':dr.Reviewer_Score})
-    print(dr.columns)
+    dr = dr.set_index('Review_Date')
+    dr.Reviewer_Score=[int(i) for i in dr.Reviewer_Score]
+    dr=pd.DataFrame(dr.groupby(['Review_Date'])['Reviewer_Score'].mean())
+    dr=pd.DataFrame({'Date':dr.index,'Score':dr.Reviewer_Score/10})
+    # print(dr.columns)
     from sklearn.model_selection import train_test_split
     colnames=['Document_No','sum','Review_Date']
     dnew=dd.drop(colnames,axis=True)
@@ -106,6 +143,7 @@ def update_figure(selected):
     np.random.seed(seed = 42)
     # X['random'] = np.random.random(size = len(X))
     X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size = 0.8, random_state = 42)
+
     from sklearn.metrics import r2_score
     from rfpimp import permutation_importances
     from sklearn.ensemble import RandomForestRegressor
@@ -122,22 +160,70 @@ def update_figure(selected):
         return r2_score(y_train, rf.predict(X_train))
 
     model=permutation_importances(rf, X_train, y_train, r2)
-    print(model)
+    model=pd.DataFrame(model)
+    print(model.index)
+    import lime
+    import lime.lime_tabular
+
+    explainer = lime.lime_tabular.LimeTabularExplainer(X_train.values,
+                                                       mode = 'regression',
+                                                       feature_names = X_train.columns,
+                                                       categorical_features = [8],
+                                                       categorical_names = ['CHAS'],
+                                                       discretize_continuous = True)
+
+    np.random.seed(42)
+    for i in range(0,2):
+            exp = explainer.explain_instance(X_valid.values[i], rf.predict, num_features = len(x_column))
+            exp.show_in_notebook(show_all=True)
 
 
-    import datetime
-    x= set(dr.Date)
-    x=sorted([i.strftime("%Y-%m-%d") for i in  x])
+
+    from datetime import datetime
+
+    x= list(set(dr.Date))
+    # x=sorted([str(i)for i in  x])
+
+    x=sorted([i.strftime("%Y-%m") for i in  x])
     y=list(dr.Score)
-    # fig = go.Figure()
+    fig = go.Figure()
 
 
 
 
+    # fig = go.Figure(make_subplots(rows=1, cols=2))
+    #
+    # fig.add_trace(
+    # go.Scatter(
+    #
+    #     x=x,
+    #     y=y,
+    #
+    #     line_color='rgb(0,176,246)',
+    #     showlegend=False,
+    #     name='average rating'
+    #
+    # ),
+    # row=1, col=1)
+    #
+    # fig.add_trace(
+    #
+    #     go.Scatter(
+    #
+    #         x=x,
+    #         y=y,
+    #
+    #         line_color='rgb(0,176,246)',
+    #         showlegend=False,
+    #         name='average rating'
+    #
+    #     ),
+    #     row=1, col=2)
+    #
+    # fig.update_layout(height=600, width=800, title_text="Subplots")
+    # fig.show()
 
-    fig = go.Figure(make_subplots(rows=2, cols=1))
-    # ,     specs=[[{"secondary_y": True}, {"secondary_y": True}],
-    #                        [{"secondary_y": True}, {"secondary_y": True}]]))
+
     traces = []
 
 
@@ -156,16 +242,23 @@ def update_figure(selected):
         # xaxis={"title": "Time"}
 
     ))
+    trace2=[]
     traces.append(
     # fig.add_trace(
     {
       "fill": "toself",
+      "type":"bar",
       "mode": "markers+lines",
       "name": "Feature importance",
       "r":list(model.Importance),
       "type": "scatterpolar",
-      "marker": {"size": 5},
+      # "x1":list(model.Importance),
+      # "y1":list(model.index),
+
+      "marker": {"size": 5, "colorscale": "Viridis"},
+       # "orientation": "h",
       "theta":list(model.index)
+
     })
 
     fig.update_layout(height=600, width=600, title_text="Stacked subplots")
