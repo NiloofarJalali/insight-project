@@ -94,3 +94,19 @@ def format_topics_sentences ( ldamodel , corpus , texts ):
     return (sent_topics_df)
 
 
+def table_process(table_topic,input_data):
+
+
+        def sentiment_analyzer_scores(sentence):
+            analyser = SentimentIntensityAnalyzer()
+            score = analyser.polarity_scores(sentence)
+            return("{}".format(str(score)))
+
+        sentiment_eval=[sentiment_analyzer_scores(i) for i in input_data]
+        sent_score=[ast.literal_eval(i) for i in  sentiment_eval]
+        sent_table=pd.DataFrame(sent_score)
+        sent_table=['Document_No']=sent_table=.index
+        sent_table==sent_table=[['compound','Document_No']]
+        table_sentiment=table_topic.merge(sent_table=, on=['Document_No'])
+        table_sentiment.loc[table_sentiment.Topic_Name=="None" ,'compound']=0
+        return(table_sentiment)

@@ -1,6 +1,7 @@
 from lib import *
 from functions import *
 
+
 def process(input_data, no_list,time_table,start, limit, step,file_name,verbose)
 
     nlp = English ()
@@ -22,21 +23,21 @@ def process(input_data, no_list,time_table,start, limit, step,file_name,verbose)
             pr = nlp ( doc )
             doc_list.append ( pr )
 
-        dd = [ flatten ( i ) for i in doc_list ]
+        doc_curpus = [ flatten ( i ) for i in doc_list ]
 
         with open ( file_name , 'wb' ) as f:
-            pickle.dump ( dd , f )
+            pickle.dump ( doc_curpus , f )
 
 
     else:
 
         with open ( file_name , 'rb' ) as f:
-            dd = pickle.load ( f )
+            doc_curpus = pickle.load ( f )
 
-    words = corpora.Dictionary ( dd )
-    corpus = [ words.doc2bow ( doc ) for doc in dd ]
+    words = corpora.Dictionary ( doc_curpus )
+    corpus = [ words.doc2bow ( doc ) for doc in doc_curpus ]
 
-    model_list , coherence_values = compute_coherence_values ( dictionary=words , corpus=corpus , texts=dd , start=start ,
+    model_list , coherence_values = compute_coherence_values ( dictionary=words , corpus=corpus , texts=doc_curpus , start=start ,
                                                                limit=limit , step=step )
     opt = coherence_values.index ( max ( coherence_values ) )
     optimal_model = model_list[ opt ]
@@ -49,4 +50,3 @@ def process(input_data, no_list,time_table,start, limit, step,file_name,verbose)
     df_dominant_topic = df_dominant_topic.merge ( time_table , left_index=True , right_index=True )
 
     return (df_dominant_topic)
-
