@@ -1,5 +1,6 @@
 from lib import *
 
+flatten = lambda l: [ item for sublist in l for item in sublist ]
 
 
 def sent_to_words(sentences):
@@ -19,6 +20,8 @@ def spacy_root(text):
 
 
 def lemmatizer ( doc ):
+    nlp = English()
+    lp= spacy.load("en")
     # This takes in a doc of tokens from the NER and lemmatizes them.
     # Pronouns (like "I" and "you" get lemmatized to '-PRON-', so I'm removing those.
     doc = [ token.lemma_ for token in doc if token.lemma_ != '-PRON-' ]
@@ -30,12 +33,12 @@ def remove_stopwords ( doc ):
     spacy_nlp = spacy.load ( 'en_core_web_sm' )
     spacy_stopwords = spacy.lang.en.stop_words.STOP_WORDS
 
-    for i in no_list:
-        STOP_WORDS.add ( i )
+    # for i in no_list:
+    #     STOP_WORDS.add ( i )
 
-    for word in STOP_WORDS:
-        lexeme = nlp.vocab[ word ]
-        lexeme.is_stop = True
+    # for word in STOP_WORDS:
+    #     lexeme = nlp.vocab[ word ]
+    #     lexeme.is_stop = True
 
     tokens = [ token.text for token in doc if not token.is_stop and token.is_punct != True and len ( token ) >= 3 ]
     tokens = [ i.lower () for i in tokens ]

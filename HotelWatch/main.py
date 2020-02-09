@@ -2,6 +2,7 @@ from lib import *
 from functions import *
 
 
+
 def load_data ( path ):
 
     with open ( path , 'rb' ) as f:
@@ -15,20 +16,20 @@ def load_data ( path ):
 
 
 def process(input_data, no_list,time_table,start, limit, step,file_name,verbose):
-
-    nlp = English ()
-    lp = spacy.load ( "en" )
-    nlp.Defaults.stop_words.update ( stop_words )
-
-    for word in STOP_WORDS:
-        lexeme = nlp.vocab[ word ]
-        lexeme.is_stop = True
-    nlp.add_pipe ( lemmatizer , name='lemmatizer' )
-    nlp.add_pipe ( remove_stopwords , name="stopwords" , last=True )
-    nlp.add_pipe ( spacy_root , name='root' )
-
-
     if verbose == True:
+        nlp = spacy.load("en_core_web_sm")
+        nlp = English ()
+        nlp = spacy.load ( "en" )
+        nlp.Defaults.stop_words.update ( stop_words )
+        for i in no_list:
+            STOP_WORDS.add ( i )
+        for word in STOP_WORDS:
+            lexeme = nlp.vocab[ word ]
+            lexeme.is_stop = True
+
+        nlp.add_pipe ( lemmatizer , name='lemmatizer' )
+        nlp.add_pipe ( remove_stopwords , name="stopwords" , last=True )
+        nlp.add_pipe ( spacy_root , name='root' )
 
         doc_list = [ ]
         for doc in tqdm ( input_data ):
@@ -78,19 +79,12 @@ def process(input_data, no_list,time_table,start, limit, step,file_name,verbose)
 
 
 
-stop_words=['hotel','room','nothing','would','could','want','go','recommend','everything','be','was','good','ok','great','poor']
 
 
 if __name__ == '__main__':
-    input_data,Time_Table=load_data ( path='data/trip_ad')
+    input_data,Time_Table=load_data ( path='data/trip_sentence')
+    stop_words=['hotel','night','nothing','would','could','want','go','recommend','everything','be','was','good','ok','great','poor','miami','YVE',"friday","saturday",'monday','week','carlos','cruise']
+
     file_name = 'data/doc_pos'
     Topic,sentiment_table =process ( input_data= input_data , no_list=stop_words , time_table=Time_Table , start=3 ,
-                      limit=30 , step=1 , file_name=file_name , verbose=False, )
-
-
-
-
-
-
-
-
+                      limit=15 , step=1 , file_name=file_name , verbose=False, )

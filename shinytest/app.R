@@ -39,22 +39,6 @@ for (i in 1:7){
   assign(nam,pickle_data[pickle_data$Date>=year_seq[i] & pickle_data$Date<year_seq[i+1], ])}
 
 
-feature_imp=function(data){
-  x_column=c("amenities", "extracharge", "location","parking", "staff")
-  fit_rf = randomForest(Reviewer_Score~amenities+extra_charge+location+parking+staff,mtry=3, na.action=na.omit,data=data,importance=TRUE)
-  imp=importance(fit_rf,type=1)
-  imp=cbind(x_column,imp)
-  imp=data.frame(imp)
-  rownames(imp)=NULL
-  imp$rank=as.numeric(as.character(imp$X.IncMSE))
-  imp$rank=round(imp$rank, digits = 2)
-  imp=imp[c("x_column","rank")]
-  imp=feature_imp(data)
-  imp <- arrange(imp, rank)
-  imp$features <- factor(imp$features, levels = imp$features)
-  return(imp)
-}
-
      
  library(shiny)
       
@@ -84,12 +68,7 @@ feature_imp=function(data){
               #             min = "Jan", max = "Dec", value = c("Jan","Feb"))
         ),
               
-              
-              
-              
-        
-            
-          
+
           
           # Main panel for displaying outputs ----
           mainPanel(
@@ -98,22 +77,13 @@ feature_imp=function(data){
                         tabPanel("Overal rating during the year", plotOutput("plot1")),
                         tabPanel("Average Rating per month", plotOutput("plot2")),
                         tabPanel("Significant Feature", plotOutput("plot3")),
-                        tabPanel("Recommendations", textOutput("text")))
+                        tabPanel("Recommendations", uiOutput("text")))
                         
                         
                 
           )
         ))
       
-
-
-
-
-
-
-
-
-
 
 
 
@@ -159,7 +129,6 @@ server <- function(input, output) {
     data_new$Reviewer_Score=data_new$Reviewer_Score/10
     ggplot(data_new,aes(x=Date,y=Reviewer_Score))+geom_line(colour='blue',size=2)},
     height = 400,width = 600)
-  
 
   output$plot3<-renderPlot({
     data=datasetInput( )
@@ -184,8 +153,8 @@ server <- function(input, output) {
     imp <- arrange(imp, rank)
     imp$features <- factor(imp$features, levels = imp$features)
     ggplot(imp, aes(features, rank, fill = features)) + geom_col() + coord_flip() +
-      scale_fill_brewer(palette="Spectral")+theme(axis.text=element_text(size=14),
-                                                  axis.title=element_text(size=16,face="bold"))
+      scale_fill_brewer(palette="Spectral")+theme(axis.text=element_text(size=20),
+                                                  axis.title=element_text(size=20,face="bold"))
     
   })
    
@@ -194,50 +163,86 @@ server <- function(input, output) {
    output$text<- renderUI({
      data=datasetInput( )
      index=which(month_table %in% input$month )
-     data=data[data$mont==index,]
-     print(data)
-     x_column=c("amenities", "extracharge", "location","parking", "staff")
-     train<-sample_frac(data, 0.8)
-     sid<-as.numeric(rownames(train)) # because rownames() returns character
-     test<-data[-sid,]
      
-     set.seed(4543)
-     fit_rf = randomForest(Reviewer_Score~amenities+extra_charge+location+parking+staff,mtry=3, na.action=na.omit,data=data,importance=TRUE)
+     data1=data[data$month==index,]
+     if(nrow(data1>10)){
+     print(data1)
+     data1$Reviewer_Score=data1$Reviewer_Score/10
+     datan=data1[data1$Reviewer_Score<4,]
+     datap=data1[data1$Reviewer_Score>=4,]
+     neg=list()
+     pos=list()
+     x_column=c("amenities", "extra_charge", "location","parking", "staff")
      
-     imp=importance(fit_rf,type=1)
-     imp=cbind(x_column,imp)
-     imp=data.frame(imp)
      
-     colnames(imp)=c("features","rank")
-     rownames(imp)=NULL
-     # counts <- c(imp$rank)
-     imp$rank=as.numeric(as.character(imp$rank))
-     imp$rank=round(imp$rank, digits = 2)
+     firstup <- function(x) {
+       substr(x, 1, 1) <- toupper(substr(x, 1, 1))
+       x
+     }
      
-     imp <- arrange(imp, rank)
-     imp$features <- factor(
-      imp$features, levels = imp$features)
-     imp=imp[imp$rank!=0,]
+     for( i in 1:length(x_column)){
+       a=datan[colnames(datan)==x_column[i]]
+       b=datap[colnames(datap)==x_column[i]]
+       if((length(a[a!=0])>0) & (length(a[a<0])>0)){
+         neg=c(neg,x_column[i])
+       }
+       else if ((length(b[b!=0])>0) & (length(b[b>0])>0)){
+         pos=c(pos,x_column[i])}
+     }
      
-     str1= paste(imp$x_column[i],"has positive effect on  rating in",input$month )
-     # for (i in 1:nrow(imp)){
-     #   name <- paste("str", i, sep = "")
-     #   if (imp$rank[i]>0){
-     #   assign(name, paste(imp$x_column[i],"has positive effect on  rating in",input$month ))}
-     #   else if (imp$rank[i]<0){
-     #     assign(name, paste(imp$x_column[i],"has negative effect on  rating in",input$month ))}
-     #   # HTML(paste(str1, str2, sep = '<br/>'))
-     # }
-      HTML(str1)
+     print(pos)
+     print(neg)
      
-  
- 
+     library(emojifont)
+     if (length(pos)!=0){ pos= paste(pos, " has positive",  sep='')}
+     if (length(neg)!=0){neg= paste(neg, " has negative" , sep='')}
+     
+     comment=c(pos, neg)
+     comment=sapply(comment,function(x) firstup(x) )}
+     
+     else(print("Not enoght data is available"))
+     
+     
     
-  })
-  
-  }
+     # train<-sample_frac(data, 0.8)
+     # sid<-as.numeric(rownames(train)) # because rownames() returns character
+     # test<-data[-sid,]
+     # 
+     # set.seed(4543)
+     # fit_rf = randomForest(Reviewer_Score~amenities+extra_charge+location+parking+staff,mtry=3, na.action=na.omit,data=data1,importance=TRUE)
+     # 
+     # imp=importance(fit_rf,type=1)
+     # imp=cbind(x_column,imp)
+     # imp=data.frame(imp)
+     # 
+     # colnames(imp)=c("features","rank")
+     # rownames(imp)=NULL
+     # # counts <- c(imp$rank)
+     # imp$rank=as.numeric(as.character(imp$rank))
+     # imp$rank=round(imp$rank, digits = 2)
+     # 
+     # imp <- arrange(imp, rank)
+     # imp$features <- factor(
+     #  imp$features, levels = imp$features)
+     # imp=imp[imp$rank!=0,]
+     # 
 
- 
+     
+     elemn=c("<div>")
+
+     for(i in 1:length(comment)){
+
+       elemn=paste(elemn,"</div><div><b>",h3(paste0(comment[i] ," effect on overal rating in ",input$month)),"</b>","</p")
+     }
+     elemn=paste0(elemn,"</div>")
+  
+    
+     HTML(elemn)
+     # HTML(elemn)
+
+   })
+
+}
     
     
     
