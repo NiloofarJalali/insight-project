@@ -2,7 +2,7 @@ from lib import *
 from functions import *
 
 
-def load_data(path)
+def load_data(path):
 
         with open ( path, 'rb' ) as f:
             trip_ad = pickle.load ( f )

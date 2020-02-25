@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efabb024-be8f-4b30-9f8a-96c8688f8f25" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Demo/HotelWatch/app.R" beforeDir="false" afterPath="$PROJECT_DIR$/../Demo/HotelWatch/app.R" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Demo/HotelWatch/rsconnect/shinyapps.io/nilooj2020/hotelwatch.dcf" beforeDir="false" afterPath="$PROJECT_DIR$/../Demo/HotelWatch/rsconnect/shinyapps.io/nilooj2020/hotelwatch.dcf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Demo/shinyapp.R" beforeDir="false" afterPath="$PROJECT_DIR$/../Demo/shinyapp.R" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/doc_pos" beforeDir="false" afterPath="$PROJECT_DIR$/data/doc_pos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/Topic" beforeDir="false" afterPath="$PROJECT_DIR$/result/Topic" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/sentiment_table" beforeDir="false" afterPath="$PROJECT_DIR$/result/sentiment_table" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../indeed-Copy1.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../notebooks/archive/HotelWatch_version_1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../notebooks/archive/HotelWatch_version_1.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../notebooks/archive/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../notebooks/archive/Untitled.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../plotly/test.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../plotly/test2.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../plotly/test3.py" beforeDir="false" />
@@ -30,17 +20,6 @@
       <change beforePath="$PROJECT_DIR$/../scraping/scrap_1.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../scraping/scrap_example.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../scraping/tripadvisor.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/.idea/libraries/R_User_Library.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/.idea/scripts.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/archive/no-longer-useful.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/functions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/lib.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/script2.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-839">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="240">
+              <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -62,8 +41,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="84" column="62" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="62" />
+            <state relative-caret-position="661">
+              <caret line="88" column="2" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/load_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+            <state relative-caret-position="45">
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="19" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -89,21 +71,26 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Time_Tanl</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/load_data.py" />
         <option value="$PROJECT_DIR$/scrape.py" />
         <option value="$PROJECT_DIR$/lib.py" />
         <option value="$PROJECT_DIR$/functions.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/load_data.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="833" />
@@ -114,6 +101,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -143,7 +131,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,16 +169,20 @@
       <workItem from="1580749234694" duration="7033000" />
       <workItem from="1580830681326" duration="491000" />
       <workItem from="1581001396543" duration="7912000" />
+      <workItem from="1581294784173" duration="232000" />
+      <workItem from="1581296236017" duration="2269000" />
+      <workItem from="1582224341356" duration="503000" />
+      <workItem from="1582560132120" duration="569000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15436000" />
+    <option name="totallyTimeSpent" value="19009000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="833" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="833" extended-state="1" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15379113" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16237482" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -230,13 +221,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-839">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scrape.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="586">
@@ -244,10 +228,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/load_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        <state relative-caret-position="45">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="19" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
@@ -256,8 +247,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="84" column="62" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="62" />
+        <state relative-caret-position="661">
+          <caret line="88" column="2" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
