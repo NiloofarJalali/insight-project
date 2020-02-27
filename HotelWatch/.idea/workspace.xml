@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efabb024-be8f-4b30-9f8a-96c8688f8f25" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../indeed-Copy1.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../notebooks/archive/HotelWatch_version_1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../notebooks/archive/HotelWatch_version_1.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../plotly/test.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../plotly/test2.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../plotly/test3.py" beforeDir="false" />
@@ -38,13 +35,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="661">
               <caret line="88" column="2" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="25" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../archive_plotly/test3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,7 +98,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="833" />
@@ -172,15 +180,16 @@
       <workItem from="1581294784173" duration="232000" />
       <workItem from="1581296236017" duration="2269000" />
       <workItem from="1582224341356" duration="503000" />
-      <workItem from="1582560132120" duration="569000" />
+      <workItem from="1582560132120" duration="676000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19009000" />
+    <option name="totallyTimeSpent" value="19116000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="833" extended-state="1" />
+    <frame x="0" y="23" width="1440" height="833" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16237482" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -251,6 +260,15 @@
           <caret line="88" column="2" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="25" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../archive_plotly/test3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
