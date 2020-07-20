@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="efabb024-be8f-4b30-9f8a-96c8688f8f25" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/.idea/scripts.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/archive/no-longer-useful.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/lib.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../archive_script/scripts/script2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../indeed-Copy1.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../plotly/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../plotly/test2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../plotly/test3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../plotly/test_trip.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../plotlyapp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projectname/projectname/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projectname/projectname/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projectname/projectname/custom_funcs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projectname/projectname/test_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projectname/projectname/test_custom_funcs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projectname/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pycharm_scripts/scripts/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pycharm_scripts/scripts/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pycharm_scripts/scripts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pycharm_scripts/scripts/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping/.ipynb_checkpoints/scrap_0-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping/.ipynb_checkpoints/scrap_1-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping/.ipynb_checkpoints/scrap_example-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping/Untitled.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping/scrap_0.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping/scrap_1.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping/scrap_example.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping/tripadvisor.ipynb" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1320">
+              <caret line="88" column="2" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Time_Tanl</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/scrape.py" />
+        <option value="$PROJECT_DIR$/lib.py" />
+        <option value="$PROJECT_DIR$/functions.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/load_data.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="833" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="HotelWatch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelWatch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelWatch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelWatch" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelWatch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelWatch" type="462c0819:PsiDirectoryNode" />
+              <item name="result" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelWatch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="HotelWatch" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="efabb024-be8f-4b30-9f8a-96c8688f8f25" name="Default Changelist" comment="" />
+      <created>1580749233293</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580749233293</updated>
+      <workItem from="1580749234694" duration="7033000" />
+      <workItem from="1580830681326" duration="491000" />
+      <workItem from="1581001396543" duration="7912000" />
+      <workItem from="1581294784173" duration="232000" />
+      <workItem from="1581296236017" duration="2269000" />
+      <workItem from="1582224341356" duration="503000" />
+      <workItem from="1582560132120" duration="676000" />
+      <workItem from="1583176309126" duration="20000" />
+      <workItem from="1584038216401" duration="721000" />
+      <workItem from="1595257969537" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="19863000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16881259" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Packages" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../archive_plotly/test3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="88" column="2" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
